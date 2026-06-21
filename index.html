@@ -7,99 +7,83 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>الحركة الميدانية</title>
+<title>الحركة الميدانية - CCTV</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- شاشة الترحيب -->
+<!-- شاشة الشعار -->
 
-<div id="welcomeScreen" class="welcome-screen">
+<section id="splashScreen" class="splash">
+
+<div class="logo-box">
+
+<img src="images/logo.png" alt="تحكم" class="logo">
+
+</div>
+
+</section>
+
+<!-- رسالة الترحيب -->
+
+<section id="welcomeScreen" class="welcome hidden">
 
 <div class="welcome-card">
 
-<h1>الحركة الميدانية</h1>
+<h1>
 
-<h2>قسم التشغيل CCTV</h2>
+مرحبًا بكم
 
-<div class="welcome-line"></div>
+</h1>
 
 <p>
 
 نسأل الله لكم التوفيق والسلامة
 
-<br>
-
-في أداء مهامكم.
+في أداء مهامكم الميدانية.
 
 </p>
 
 </div>
 
-</div>
+</section>
 
-<!-- الصفحة الرئيسية -->
+<!-- صفحة الخطة -->
 
-<div id="homePage" class="home-page hidden">
+<section id="planScreen" class="plan hidden">
 
-<header class="top-header">
+<div class="plan-card">
 
-<h1>الحركة الميدانية</h1>
+<h2>
 
-<h2>قسم التشغيل CCTV</h2>
+بيانات الخطة
 
-</header>
+</h2>
 
-<section class="plan-card">
+<label>
 
-<h3>بيانات الخطة</h3>
+رقم الخطة
 
-<label>رقم الخطة</label>
+</label>
 
 <input
+
 type="number"
+
 id="planNumber"
-placeholder="أدخل رقم الخطة">
+
+placeholder="أدخل رقم الخطة"
+
+>
 
 <button id="searchBtn">
 
 بحث
-
-</button></section>
-
-<section id="routeCard" class="route-card hidden">
-
-<h3>اسم المسار</h3>
-
-<input
-type="text"
-id="routeName"
-readonly>
-
-<div class="btn-group">
-
-<button id="startMission">
-
-بدء المهمة
-
-</button>
-
-<button
-id="historyBtn"
-class="gray-btn">
-
-سجل الخطط السابقة
-
-</button>
-
-<button
-id="backBtn"
-class="outline-btn">
-
-رجوع
 
 </button>
 
@@ -107,22 +91,75 @@ class="outline-btn">
 
 </section>
 
-<footer>
-
-إدارة أنظمة المراقبة الأمنية
-
-<br>
-
-قسم التشغيل CCTV
-
-</footer>
-
-</div>
-
 <script src="plans.js"></script>
 
 <script src="app.js"></script>
 
 </body>
 
-</html>
+</html><!-- صفحة الخطة -->
+
+<section id="planScreen" class="plan hidden">
+
+    <div class="plan-card">
+
+        <div class="card-header">
+
+            <h2>بيانات الخطة</h2>
+
+            <p>الحركة الميدانية لقسم التشغيل CCTV</p>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>رقم الخطة</label>
+
+            <input
+                type="number"
+                id="planNumber"
+                placeholder="أدخل رقم الخطة">
+
+        </div>
+
+        <button id="searchBtn" class="search-btn">
+
+            بحث
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- صفحة المسار -->
+
+<section id="routeScreen" class="route hidden">
+
+    <div class="route-card">
+
+        <h2>اسم المسار</h2>
+
+        <h1 id="routeName"></h1>
+
+        <button id="startRouteBtn" class="main-btn">
+
+            بدء المسار
+
+        </button>
+
+        <button id="historyBtn" class="second-btn">
+
+            سجلات المسار السابقة
+
+        </button>
+
+        <button id="backBtn" class="back-btn">
+
+            العودة لرقم الخطة
+
+        </button>
+
+    </div>
+
+</section>
