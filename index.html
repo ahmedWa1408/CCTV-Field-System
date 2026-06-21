@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-
-الحركة الميدانية | قسم التشغيل CCTV
-
-</title>
-
-<link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-
-<!-- شاشة الشعار -->
-
-<div id="splashScreen" class="splash-screen">
-
-<img
-src="IMG_3707.jpeg"
-class="logo"
-alt="Tahakom">
-
-</div>
-
 <!-- شاشة الترحيب -->
 
-<div
-id="welcomeScreen"
-class="welcome-screen hidden">
+<div id="welcomeScreen" class="welcome-screen">
 
 <div class="welcome-card">
 
-<h1>
+<h1>الحركة الميدانية</h1>
 
-الحركة الميدانية
-
-</h1>
-
-<h2>
-
-قسم التشغيل CCTV
-
-</h2>
+<h2>قسم التشغيل CCTV</h2>
 
 <div class="welcome-line"></div>
 
@@ -69,67 +26,37 @@ class="welcome-screen hidden">
 
 <!-- الصفحة الرئيسية -->
 
-<div
-id="homePage"
-class="home-page hidden">
+<div id="homePage" class="home-page hidden">
 
 <header class="header">
 
-<h1>
+<h1>الحركة الميدانية</h1>
 
-الحركة الميدانية
-
-</h1>
-
-<p>
-
-قسم التشغيل CCTV
-
-</p>
+<p>قسم التشغيل CCTV</p>
 
 </header>
 
-<main class="container"><!-- بطاقة البحث -->
+<main class="container">
 
-<section
-id="searchCard"
-class="card">
+<section id="searchCard" class="card">
 
-<h2>
+<h2>بيانات الخطة</h2>
 
-بيانات الخطة
-
-</h2>
-
-<label>
-
-رقم الخطة
-
-</label>
+<label>رقم الخطة</label>
 
 <input
-
 type="number"
-
 id="planNumber"
-
 placeholder="أدخل رقم الخطة">
 
-<button
-id="searchBtn">
+<button id="searchBtn">
 
 بحث
 
 </button>
 
-</section>
-
-<!-- بطاقة المسار -->
-
-<section
-
+</section><section
 id="routeCard"
-
 class="card hidden">
 
 <h2>
@@ -139,11 +66,8 @@ class="card hidden">
 </h2>
 
 <input
-
 type="text"
-
 id="routeName"
-
 readonly>
 
 <div class="buttons">
@@ -164,19 +88,21 @@ class="secondary-btn">
 
 </button>
 
-</div>
-
 <button
 id="backBtn"
 class="back-btn">
 
-العودة
+رجوع
 
 </button>
 
+</div>
+
 </section>
 
-</main><footer>
+</main>
+
+<footer>
 
 إدارة أنظمة المراقبة الأمنية
 
@@ -189,9 +115,7 @@ class="back-btn">
 </div>
 
 <script src="plans.js"></script>
-
 <script src="app.js"></script>
 
 </body>
-
 </html>
