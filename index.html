@@ -4,9 +4,15 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>الحركة الميدانية | قسم التشغيل CCTV</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+الحركة الميدانية | قسم التشغيل CCTV
+
+</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,64 +20,86 @@
 
 <body>
 
-<!-- ========================= -->
 <!-- شاشة الشعار -->
-<!-- ========================= -->
 
 <div id="splashScreen" class="splash-screen">
 
-    <img
-        src="assets/logo.png"
-        alt="Tahakom"
-        class="logo">
+<img
+src="IMG_3707.jpeg"
+class="logo"
+alt="Tahakom">
 
 </div>
 
-<!-- ========================= -->
 <!-- شاشة الترحيب -->
-<!-- ========================= -->
 
-<div id="welcomeScreen" class="welcome-screen hidden">
+<div
+id="welcomeScreen"
+class="welcome-screen hidden">
 
-    <div class="welcome-card">
+<div class="welcome-card">
 
-        <h1>الحركة الميدانية</h1>
+<h1>
 
-        <h2>لقسم التشغيل CCTV</h2>
+الحركة الميدانية
 
-        <div class="welcome-line"></div>
+</h1>
 
-        <p>
+<h2>
 
-            نسأل الله لكم التوفيق والسلامة
-            <br>
-            في أداء مهامكم الميدانية.
+قسم التشغيل CCTV
 
-        </p>
+</h2>
 
-    </div>
+<div class="welcome-line"></div>
+
+<p>
+
+نسأل الله لكم التوفيق والسلامة
+
+<br>
+
+في أداء مهامكم الميدانية
+
+</p>
 
 </div>
 
-<!-- ========================= -->
+</div>
+
 <!-- الصفحة الرئيسية -->
-<!-- ========================= -->
 
-<div id="homePage" class="home-page hidden">
+<div
+id="homePage"
+class="home-page hidden">
 
-<header class="top-header">
+<header class="header">
 
-<h1>الحركة الميدانية</h1>
+<h1>
 
-<h2>قسم التشغيل CCTV</h2>
+الحركة الميدانية
+
+</h1>
+
+<p>
+
+قسم التشغيل CCTV
+
+</p>
 
 </header>
 
-<main class="container">
+<main class="container"><!-- بطاقة البحث -->
 
-<section id="searchCard" class="card">
+<section
+id="searchCard"
+class="card">
 
-<h3>بيانات الخطة</h3>
+<h2>
+
+بيانات الخطة
+
+</h2>
 
 <label>
 
@@ -80,62 +108,75 @@
 </label>
 
 <input
+
 type="number"
+
 id="planNumber"
+
 placeholder="أدخل رقم الخطة">
 
-<button id="searchBtn">
+<button
+id="searchBtn">
 
 بحث
 
 </button>
 
-</section><!-- ========================= -->
-<!-- بيانات المسار -->
-<!-- ========================= -->
+</section>
 
-<section id="routeCard" class="card hidden">
+<!-- بطاقة المسار -->
 
-<h3>
+<section
+
+id="routeCard"
+
+class="card hidden">
+
+<h2>
 
 اسم المسار
 
-</h3>
+</h2>
 
 <input
+
 type="text"
+
 id="routeName"
+
 readonly>
 
 <div class="buttons">
 
-<button id="missionBtn" class="primary-btn">
+<button
+id="missionBtn"
+class="primary-btn">
 
 بدء المهمة
 
 </button>
 
-<button id="historyBtn" class="secondary-btn">
+<button
+id="historyBtn"
+class="secondary-btn">
 
-سجل العمليات السابقة
+سجل الخطط السابقة
 
 </button>
 
 </div>
 
-<hr>
+<button
+id="backBtn"
+class="back-btn">
 
-<button id="backBtn" class="back-btn">
-
-⬅ العودة لرقم الخطة
+العودة
 
 </button>
 
 </section>
 
-</main>
-
-<footer>
+</main><footer>
 
 إدارة أنظمة المراقبة الأمنية
 
@@ -148,6 +189,7 @@ readonly>
 </div>
 
 <script src="plans.js"></script>
+
 <script src="app.js"></script>
 
 </body>
