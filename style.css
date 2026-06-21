@@ -1,29 +1,19 @@
-/*========================================
-الحركة الميدانية CCTV
-========================================*/
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Tahoma",sans-serif;
+font-family:Tahoma,sans-serif;
 }
 
 body{
 
 background:#eef3f9;
 
-color:#1f2937;
+color:#222;
 
 overflow-x:hidden;
 
 }
-
-
-
-/*========================================
-إخفاء العناصر
-========================================*/
 
 .hidden{
 
@@ -31,11 +21,7 @@ display:none;
 
 }
 
-
-
-/*========================================
-شاشة الشعار
-========================================*/
+/* شاشة الشعار */
 
 .splash-screen{
 
@@ -49,39 +35,31 @@ width:100%;
 
 height:100vh;
 
-background:linear-gradient(135deg,#00bcd4,#3f51b5);
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
-z-index:9999;
+background:linear-gradient(135deg,#00BCD4,#3F51B5);
 
-animation:fadeOut .8s ease 2.5s forwards;
+z-index:9999;
 
 }
 
 .logo{
 
-width:190px;
+width:220px;
 
-height:190px;
+height:220px;
 
 object-fit:contain;
 
-animation:zoomLogo 1.2s ease;
-
-filter:drop-shadow(0 15px 30px rgba(0,0,0,.35));
+animation:logoZoom 1.2s ease;
 
 }
 
-
-
-/*========================================
-شاشة الترحيب
-========================================*/
+/* شاشة الترحيب */
 
 .welcome-screen{
 
@@ -95,13 +73,13 @@ width:100%;
 
 height:100vh;
 
-background:linear-gradient(135deg,#eef7ff,#f5f3ff);
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
+
+background:linear-gradient(135deg,#eef7ff,#f4f3ff);
 
 z-index:9998;
 
@@ -111,15 +89,17 @@ z-index:9998;
 
 background:#fff;
 
-width:min(92%,500px);
+width:90%;
+
+max-width:520px;
 
 padding:45px;
 
-border-radius:30px;
+border-radius:28px;
 
 text-align:center;
 
-box-shadow:0 20px 40px rgba(0,0,0,.12);
+box-shadow:0 20px 40px rgba(0,0,0,.15);
 
 }
 
@@ -127,19 +107,19 @@ box-shadow:0 20px 40px rgba(0,0,0,.12);
 
 font-size:40px;
 
-color:#2b3b9c;
+color:#3246a8;
 
-margin-bottom:10px;
+margin-bottom:12px;
 
 }
 
 .welcome-card h2{
 
-font-size:26px;
+font-size:25px;
 
-color:#00acc1;
+color:#00ACC1;
 
-margin-bottom:25px;
+margin-bottom:20px;
 
 }
 
@@ -149,11 +129,13 @@ width:120px;
 
 height:5px;
 
-background:linear-gradient(to left,#00bcd4,#3f51b5);
+margin:auto;
 
-border-radius:20px;
+margin-bottom:25px;
 
-margin:auto auto 25px;
+border-radius:50px;
+
+background:linear-gradient(to left,#00BCD4,#3F51B5);
 
 }
 
@@ -165,9 +147,9 @@ line-height:2;
 
 color:#555;
 
-}/*========================================
+}/*==========================
 الصفحة الرئيسية
-========================================*/
+==========================*/
 
 .home-page{
 
@@ -179,39 +161,33 @@ flex-direction:column;
 
 }
 
+.header{
 
+background:linear-gradient(135deg,#00BCD4,#3F51B5);
 
-.top-header{
-
-background:linear-gradient(135deg,#00bcd4,#3f51b5);
-
-padding:35px 20px;
+color:#fff;
 
 text-align:center;
 
-color:#fff;
+padding:35px 20px;
 
 box-shadow:0 10px 30px rgba(0,0,0,.15);
 
 }
 
-.top-header h1{
+.header h1{
 
-font-size:38px;
+font-size:36px;
 
 margin-bottom:8px;
 
 }
 
-.top-header h2{
+.header p{
 
-font-size:22px;
-
-font-weight:400;
+font-size:20px;
 
 }
-
-
 
 .container{
 
@@ -227,33 +203,33 @@ padding:40px 20px;
 
 }
 
-
-
 .card{
 
-width:min(95%,520px);
+width:100%;
+
+max-width:520px;
 
 background:#fff;
 
-padding:35px;
-
 border-radius:25px;
+
+padding:35px;
 
 box-shadow:0 15px 35px rgba(0,0,0,.10);
 
-animation:cardShow .5s ease;
+animation:cardShow .4s ease;
 
 }
 
-.card h3{
+.card h2{
+
+text-align:center;
 
 font-size:28px;
 
-color:#2b3b9c;
+color:#3246A8;
 
 margin-bottom:25px;
-
-text-align:center;
 
 }
 
@@ -261,9 +237,9 @@ text-align:center;
 
 display:block;
 
-font-size:18px;
-
 margin-bottom:10px;
+
+font-size:18px;
 
 font-weight:bold;
 
@@ -273,33 +249,29 @@ font-weight:bold;
 
 width:100%;
 
-height:56px;
+height:58px;
 
 border:2px solid #d7dbe8;
 
-border-radius:14px;
+border-radius:15px;
 
 padding:0 15px;
 
 font-size:18px;
 
-outline:none;
-
-transition:.25s;
-
 margin-bottom:20px;
+
+outline:none;
 
 }
 
 .card input:focus{
 
-border-color:#3f51b5;
+border-color:#3F51B5;
 
-box-shadow:0 0 0 4px rgba(63,81,181,.12);
-
-}/*========================================
+}/*==========================
 الأزرار
-========================================*/
+==========================*/
 
 .buttons{
 
@@ -321,7 +293,7 @@ height:56px;
 
 border:none;
 
-border-radius:14px;
+border-radius:15px;
 
 font-size:18px;
 
@@ -329,7 +301,7 @@ font-weight:bold;
 
 cursor:pointer;
 
-transition:.25s;
+transition:.3s;
 
 }
 
@@ -337,14 +309,12 @@ button:hover{
 
 transform:translateY(-2px);
 
-box-shadow:0 10px 20px rgba(0,0,0,.15);
-
 }
 
 .primary-btn,
 #searchBtn{
 
-background:linear-gradient(135deg,#00bcd4,#3f51b5);
+background:linear-gradient(135deg,#00BCD4,#3F51B5);
 
 color:#fff;
 
@@ -352,29 +322,29 @@ color:#fff;
 
 .secondary-btn{
 
-background:#ffffff;
+background:#fff;
 
-border:2px solid #3f51b5;
+border:2px solid #3F51B5;
 
-color:#3f51b5;
+color:#3F51B5;
 
 }
 
 .back-btn{
 
-background:#eceff5;
+margin-top:20px;
+
+background:#ECEFF5;
 
 color:#333;
-
-margin-top:20px;
 
 }
 
 
 
-/*========================================
+/*==========================
 الفوتر
-========================================*/
+==========================*/
 
 footer{
 
@@ -384,27 +354,25 @@ padding:25px;
 
 background:#fff;
 
-font-size:16px;
-
 color:#666;
 
-border-top:1px solid #e5e7eb;
+border-top:1px solid #ddd;
 
 }
 
 
 
-/*========================================
+/*==========================
 الحركات
-========================================*/
+==========================*/
 
-@keyframes zoomLogo{
+@keyframes logoZoom{
 
 0%{
 
 opacity:0;
 
-transform:scale(.4);
+transform:scale(.3);
 
 }
 
@@ -418,21 +386,9 @@ transform:scale(1);
 
 }
 
-@keyframes fadeOut{
-
-to{
-
-opacity:0;
-
-visibility:hidden;
-
-}
-
-}
-
 @keyframes cardShow{
 
-from{
+0%{
 
 opacity:0;
 
@@ -440,7 +396,7 @@ transform:translateY(25px);
 
 }
 
-to{
+100%{
 
 opacity:1;
 
@@ -452,19 +408,27 @@ transform:translateY(0);
 
 
 
-/*========================================
+/*==========================
 الجوال
-========================================*/
+==========================*/
 
 @media(max-width:768px){
 
-.top-header h1{
+.logo{
+
+width:170px;
+
+height:170px;
+
+}
+
+.header h1{
 
 font-size:30px;
 
 }
 
-.top-header h2{
+.header p{
 
 font-size:18px;
 
@@ -473,20 +437,6 @@ font-size:18px;
 .card{
 
 padding:25px;
-
-}
-
-.card h3{
-
-font-size:24px;
-
-}
-
-.logo{
-
-width:150px;
-
-height:150px;
 
 }
 
@@ -505,12 +455,6 @@ font-size:32px;
 .welcome-card h2{
 
 font-size:22px;
-
-}
-
-.welcome-card p{
-
-font-size:17px;
 
 }
 
