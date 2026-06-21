@@ -32,8 +32,8 @@
 نسأل الله لكم التوفيق والسلامة
 
 <br>
-في أداء مهامكم.
 
+في أداء مهامكم.
 
 </p>
 
@@ -47,37 +47,22 @@
 
 <header class="top-header">
 
-<h1>
+<h1>الحركة الميدانية</h1>
 
-الحركة الميدانية
-
-</h1>
-
-<h2>
-
-قسم التشغيل CCTV
-
-</h2>
+<h2>قسم التشغيل CCTV</h2>
 
 </header>
 
 <section class="plan-card">
 
-<h3>
+<h3>بيانات الخطة</h3>
 
-بيانات الخطة
-
-</h3>
-
-<label>
-
-رقم الخطة
-
-</label>
+<label>رقم الخطة</label>
 
 <input
+type="number"
 id="planNumber"
-type="number">
+placeholder="أدخل رقم الخطة">
 
 <button id="searchBtn">
 
@@ -85,23 +70,18 @@ type="number">
 
 </button></section>
 
-<section
-id="routeCard"
-class="route-card hidden">
+<section id="routeCard" class="route-card hidden">
 
-<h3>
-
-اسم المسار
-
-</h3>
+<h3>اسم المسار</h3>
 
 <input
-id="routeName"
 type="text"
+id="routeName"
 readonly>
 
-<button
-id="startMission">
+<div class="btn-group">
+
+<button id="startMission">
 
 بدء المهمة
 
@@ -123,6 +103,8 @@ class="outline-btn">
 
 </button>
 
+</div>
+
 </section>
 
 <footer>
@@ -138,7 +120,9 @@ class="outline-btn">
 </div>
 
 <script src="plans.js"></script>
+
 <script src="app.js"></script>
 
 </body>
+
 </html>
