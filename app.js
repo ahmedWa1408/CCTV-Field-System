@@ -1,33 +1,25 @@
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
-const splash=document.getElementById("splashScreen");
-const welcome=document.getElementById("welcomeScreen");
-const home=document.getElementById("homePage");
+const welcome = document.getElementById("welcomeScreen");
+const home = document.getElementById("homePage");
 
-const searchCard=document.getElementById("searchCard");
-const routeCard=document.getElementById("routeCard");
+const searchCard = document.getElementById("searchCard");
+const routeCard = document.getElementById("routeCard");
 
-const planNumber=document.getElementById("planNumber");
-const routeName=document.getElementById("routeName");
+const planNumber = document.getElementById("planNumber");
+const routeName = document.getElementById("routeName");
 
-const searchBtn=document.getElementById("searchBtn");
-const backBtn=document.getElementById("backBtn");
-const missionBtn=document.getElementById("missionBtn");
-const historyBtn=document.getElementById("historyBtn");
-
+const searchBtn = document.getElementById("searchBtn");
+const backBtn = document.getElementById("backBtn");
+const missionBtn = document.getElementById("missionBtn");
+const historyBtn = document.getElementById("historyBtn");
 
 
-/* شاشة الشعار */
-
-setTimeout(()=>{
-
-splash.style.display="none";
+// شاشة الترحيب
 
 welcome.classList.remove("hidden");
 
-
-
-setTimeout(()=>{
+setTimeout(() => {
 
 welcome.classList.add("hidden");
 
@@ -35,19 +27,16 @@ home.classList.remove("hidden");
 
 planNumber.focus();
 
-},2500);
-
-},2500);
+}, 2500);
 
 
+// البحث
 
-/* البحث */
+searchBtn.onclick = function () {
 
-searchBtn.onclick=function(){
+const number = planNumber.value.trim();
 
-const number=planNumber.value.trim();
-
-if(number===""){
+if (number === "") {
 
 alert("أدخل رقم الخطة");
 
@@ -55,7 +44,7 @@ return;
 
 }
 
-if(!plans[number]){
+if (!plans[number]) {
 
 alert("رقم الخطة غير موجود");
 
@@ -63,80 +52,62 @@ return;
 
 }
 
-routeName.value=plans[number].route;
+routeName.value = plans[number].route;
 
 searchCard.classList.add("hidden");
 
 routeCard.classList.remove("hidden");
 
-};/* الرجوع */
+};
 
-backBtn.onclick=function(){
+
+// الرجوع
+
+backBtn.onclick = function () {
 
 routeCard.classList.add("hidden");
 
 searchCard.classList.remove("hidden");
 
-routeName.value="";
+routeName.value = "";
 
 planNumber.focus();
 
 };
 
 
+// بدء المهمة
 
-/* بدء المهمة */
+missionBtn.onclick = function () {
 
-missionBtn.onclick=function(){
+const number = planNumber.value.trim();
 
-const number=planNumber.value.trim();
-
-if(number===""){
-
-alert("أدخل رقم الخطة أولاً");
-
-return;
-
-}
-
-window.location.href=
-
-"mission.html?plan="+
-
+window.location.href =
+"mission.html?plan=" +
 encodeURIComponent(number);
 
 };
 
 
+// سجل الخطط السابقة
 
-/* سجل الخطط السابقة */
+historyBtn.onclick = function () {
 
-historyBtn.onclick=function(){
-
-window.location.href=
-
-"history.html";
+window.location.href = "history.html";
 
 };
 
 
+// Enter
 
-/* Enter */
+planNumber.addEventListener("keydown", function (e) {
 
-planNumber.addEventListener(
-
-"keydown",
-
-function(e){
-
-if(e.key==="Enter"){
+if (e.key === "Enter") {
 
 searchBtn.click();
 
 }
 
-}
-
-);
+});
 
 });
