@@ -1,37 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Tahoma,sans-serif;
+font-family:'Cairo',sans-serif;
 }
 
 body{
 
-background:linear-gradient(180deg,#eef6ff,#f7f8ff);
+background:#f7f9fc;
 
-min-height:100vh;
+direction:rtl;
 
-overflow-x:hidden;
-
-color:#222;
+overflow:hidden;
 
 }
+
+/* إخفاء الصفحات */
 
 .hidden{
 
-display:none;
+display:none!important;
 
 }
 
-/* شاشة الترحيب */
+/* شاشة الشعار */
 
-.welcome-screen{
+.splash{
 
 position:fixed;
 
 top:0;
 
+right:0;
+
 left:0;
+
+bottom:0;
+
+background:#ffffff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+animation:fadeIn .7s;
+
+}
+
+.logo-box{
+
+animation:zoomLogo 1.5s ease;
+
+}
+
+.logo{
+
+width:220px;
+
+filter:drop-shadow(0 0 20px rgba(0,162,255,.35));
+
+}
+
+/* رسالة الترحيب */
+
+.welcome{
 
 width:100%;
 
@@ -43,9 +81,7 @@ justify-content:center;
 
 align-items:center;
 
-background:linear-gradient(135deg,#edf7ff,#f3f3ff);
-
-z-index:9999;
+background:#ffffff;
 
 }
 
@@ -53,297 +89,361 @@ z-index:9999;
 
 width:90%;
 
-max-width:480px;
+max-width:600px;
 
-background:#fff;
+background:white;
 
-padding:45px 35px;
-
-border-radius:28px;
-
-text-align:center;
-
-box-shadow:0 15px 40px rgba(0,0,0,.12);
-
-}
-
-.welcome-card h1{
-
-font-size:42px;
-
-color:#3047B5;
-
-margin-bottom:10px;
-
-}
-
-.welcome-card h2{
-
-font-size:28px;
-
-color:#00C7D9;
-
-margin-bottom:25px;
-
-}
-
-.welcome-line{
-
-width:120px;
-
-height:5px;
-
-margin:auto;
-
-margin-bottom:25px;
+padding:45px;
 
 border-radius:30px;
 
-background:linear-gradient(to left,#00C7D9,#3047B5);
-
-}
-
-.welcome-card p{
-
-font-size:24px;
-
-font-weight:700;
-
-line-height:1.8;
-
-color:#444;
-
-}/* الصفحة الرئيسية */
-
-.home-page{
-
-min-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
-}
-
-.top-header{
-
-padding:40px 20px 25px;
+box-shadow:0 20px 45px rgba(0,0,0,.08);
 
 text-align:center;
-
-}
-
-.top-header h1{
-
-font-size:40px;
-
-color:#3047B5;
-
-margin-bottom:8px;
-
-}
-
-.top-header h2{
-
-font-size:24px;
-
-color:#00C7D9;
-
-}
-
-.plan-card,
-.route-card{
-
-width:92%;
-
-max-width:520px;
-
-margin:25px auto;
-
-background:#fff;
-
-padding:30px;
-
-border-radius:24px;
-
-box-shadow:0 12px 30px rgba(0,0,0,.10);
-
-}
-
-.plan-card h3,
-.route-card h3{
-
-text-align:center;
-
-font-size:28px;
-
-margin-bottom:25px;
-
-color:#3047B5;
-
-}
-
-label{
-
-display:block;
-
-font-size:18px;
-
-font-weight:bold;
-
-margin-bottom:10px;
-
-}
-
-input{
-
-width:100%;
-
-height:56px;
-
-border:2px solid #DCE3F2;
-
-border-radius:14px;
-
-padding:0 15px;
-
-font-size:18px;
-
-margin-bottom:20px;
-
-outline:none;
-
-}
-
-input:focus{
-
-border-color:#3047B5;
-
-}button{
-
-width:100%;
-
-height:56px;
-
-border:none;
-
-border-radius:14px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-margin-top:12px;
-
-transition:.25s;
-
-}
-
-button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:0 10px 20px rgba(0,0,0,.12);
-
-}
-
-#searchBtn,
-#startMission{
-
-background:linear-gradient(135deg,#00C7D9,#3047B5);
-
-color:#fff;
-
-}
-
-.gray-btn{
-
-background:#F3F5FA;
-
-color:#3047B5;
-
-}
-
-.outline-btn{
-
-background:#fff;
-
-border:2px solid #3047B5;
-
-color:#3047B5;
-
-}
-
-.btn-group{
-
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
-margin-top:10px;
-
-}
-
-footer{
-
-margin-top:auto;
-
-text-align:center;
-
-padding:25px;
-
-color:#666;
-
-font-size:16px;
-
-}@media(max-width:768px){
-
-.welcome-card{
-
-padding:30px;
 
 }
 
 .welcome-card h1{
 
-font-size:34px;
+font-size:38px;
 
-}
+color:#34495e;
 
-.welcome-card h2{
-
-font-size:24px;
+margin-bottom:20px;
 
 }
 
 .welcome-card p{
 
-font-size:20px;
+font-size:22px;
+
+line-height:2;
+
+color:#555;
+
+}/* صفحة الخطة */
+
+.plan{
+
+width:100%;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#4facfe,#6a5cff);
+
+padding:20px;
 
 }
 
-.top-header h1{
+.plan-card{
+
+width:100%;
+
+max-width:430px;
+
+background:#fff;
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.card-header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.card-header h2{
 
 font-size:32px;
 
+color:#4b2aad;
+
+margin-bottom:8px;
+
+font-weight:800;
+
 }
 
-.top-header h2{
+.card-header p{
+
+font-size:16px;
+
+color:#777;
+
+}
+
+.input-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+margin-bottom:25px;
+
+}
+
+.input-group label{
+
+font-size:19px;
+
+font-weight:700;
+
+color:#444;
+
+}
+
+.input-group input{
+
+height:58px;
+
+border:2px solid #d7d7d7;
+
+border-radius:16px;
+
+padding:0 18px;
+
+font-size:22px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.input-group input:focus{
+
+border-color:#5a4cff;
+
+}
+
+.search-btn{
+
+width:100%;
+
+height:58px;
+
+border:none;
+
+border-radius:16px;
+
+background:linear-gradient(90deg,#5b4dff,#4aa3ff);
+
+color:#fff;
+
+font-size:22px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.search-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 25px rgba(91,77,255,.35);
+
+}/* صفحة المسار */
+
+.route{
+
+width:100%;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#4facfe,#6a5cff);
+
+padding:20px;
+
+}
+
+.route-card{
+
+width:100%;
+
+max-width:430px;
+
+background:#ffffff;
+
+border-radius:28px;
+
+padding:35px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+text-align:center;
+
+}
+
+.route-card h2{
+
+font-size:22px;
+
+color:#666;
+
+margin-bottom:12px;
+
+}
+
+#routeName{
+
+font-size:34px;
+
+font-weight:800;
+
+color:#4b2aad;
+
+margin-bottom:35px;
+
+min-height:45px;
+
+}
+
+.main-btn{
+
+width:100%;
+
+height:58px;
+
+margin-bottom:15px;
+
+border:none;
+
+border-radius:16px;
+
+background:#2e7d32;
+
+color:#fff;
+
+font-size:22px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+.main-btn:hover{
+
+background:#1b5e20;
+
+}
+
+.second-btn{
+
+width:100%;
+
+height:58px;
+
+margin-bottom:15px;
+
+border:none;
+
+border-radius:16px;
+
+background:#1565c0;
+
+color:#fff;
+
+font-size:21px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.second-btn:hover{
+
+background:#0d47a1;
+
+}
+
+.back-btn{
+
+width:100%;
+
+height:58px;
+
+border:none;
+
+border-radius:16px;
+
+background:#eceff1;
+
+color:#333;
 
 font-size:20px;
 
+font-weight:700;
+
+cursor:pointer;
+
 }
 
-.plan-card,
-.route-card{
+.back-btn:hover{
 
-width:94%;
+background:#dfe6ea;
 
-padding:24px;
+}
+
+/* الحركات */
+
+@keyframes zoomLogo{
+
+0%{
+
+opacity:0;
+
+transform:scale(.4);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
 
 }
 
