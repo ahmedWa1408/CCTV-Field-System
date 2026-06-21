@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+
+بدء المهمة
+
+</title>
+
+<link rel="stylesheet" href="mission.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<h1>
+
+الحركة الميدانية
+
+</h1>
+
+<h2>
+
+قسم التشغيل CCTV
+
+</h2>
+
+</header>
+
+<section class="info-card">
+
+<h3>
+
+بيانات المهمة
+
+</h3>
+
+<div class="grid">
+
+<div>
+
+<label>اسم المشغل</label>
+
+<input type="text" id="operator">
+
+</div>
+
+<div>
+
+<label>رقم ID</label>
+
+<input type="text" id="employeeId">
+
+</div>
+
+<div>
+
+<label>رقم السيارة</label>
+
+<input type="text" id="vehicle">
+
+</div>
+
+<div>
+
+<label>رقم اللابتوب</label>
+
+<input type="text" id="laptop">
+
+</div>
+
+<div>
+
+<label>عدد الفلاشات</label>
+
+<input type="number" id="flash">
+
+</div>
+
+<div>
+
+<label>عدد الهاردسكات</label>
+
+<input type="number" id="hard">
+
+</div>
+
+</div>
+
+</section><section class="progress-card">
+
+<h3>
+
+مؤشر الإنجاز
+
+</h3>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="progressText">
+
+0% مكتمل
+
+</p>
+
+</section>
+
+<section class="table-card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>رمز الموقع</th>
+
+<th>فتح الموقع</th>
+
+<th>حالة الوصول</th>
+
+<th>XML</th>
+
+<th>حالة الموقع</th>
+
+<th>بداية المجلد</th>
+
+<th>نهاية المجلد</th>
+
+<th>عدد ساعات المجلد</th>
+
+<th>الصور</th>
+
+<th>الملاحظات</th>
+
+</tr>
+
+</thead>
+
+<tbody id="sitesTable">
+
+</tbody>
+
+</table>
+
+</section><section class="finish-card">
+
+<label>ملاحظات عامة</label>
+
+<textarea id="generalNotes"></textarea>
+
+<div class="buttons">
+
+<button id="saveBtn">
+
+حفظ
+
+</button>
+
+<button id="finishBtn">
+
+إنهاء المهمة
+
+</button>
+
+<button id="pdfBtn">
+
+PDF
+
+</button>
+
+<button id="printBtn">
+
+طباعة
+
+</button>
+
+</div>
+
+<div class="supervisor">
+
+<label>مشرف الفترة</label>
+
+<input type="text" id="supervisorName" readonly>
+
+<label>الاعتماد</label>
+
+<input type="text" id="approval" readonly>
+
+</div>
+
+</section>
+
+<script src="mission.js"></script>
+
+</body>
+
+</html>
