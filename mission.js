@@ -1,20 +1,21 @@
+const params=new URLSearchParams(window.location.search);
+const planNumber=params.get("plan");
+
+const table=document.getElementById("sitesTable");
 const progressBar=document.getElementById("progressBar");
 const progressText=document.getElementById("progressText");
-const sitesTable=document.getElementById("sitesTable");
 
-const sites=[
-"QSMSM204",
-"QSMSM205",
-"QSMSM206",
-"QSMSM207",
-"QSMSM208"
-];
+let sites=[];
+
+if(planNumber==="1"){
+sites=plan1;
+}
 
 let completed=0;
 
 function updateProgress(){
 
-const percent=Math.round((completed/sites.length)*100);
+const percent=sites.length===0?0:Math.round((completed/sites.length)*100);
 
 progressBar.style.width=percent+"%";
 
@@ -22,65 +23,109 @@ progressText.innerText=percent+"% مكتمل";
 
 }
 
-sites.forEach(function(code){
+function createTable(){
+
+table.innerHTML="";
+
+sites.forEach(function(site,index){
 
 const row=document.createElement("tr");
 
 row.innerHTML=`
-<td>${code}</td>
-<td><button>📍 فتح</button></td>
-<td>🔴 خارج النطاق</td>
+<td>${site.code}</td>
+
 <td>
-<select>
+<a href="${site.map}" target="_blank">
+📍 فتح
+</a>
+</td>
+
+<td class="gps">
+خارج النطاق
+</td>
+
+<td>
+<select disabled class="xml">
 <option>يوجد</option>
 <option>لا يوجد</option>
 </select>
 </td>
+
 <td>
-<select>
+<select disabled class="status">
 <option>🟢 يعمل</option>
 <option>🟡 يعمل ولا توجد مخالفات</option>
-<option>🟤 لا يعمل وتوجد مخالفات</option>
+<option>🟠 لا يعمل وتوجد مخالفات</option>
 <option>🔴 لا يعمل ولا توجد مخالفات</option>
 </select>
 </td>
-<td><input type="datetime-local"></td>
-<td><input type="datetime-local"></td>
-<td><input type="text" readonly></td>
-<td><input type="file"></td>
-<td><input type="text"></td>
+
+<td>
+<input disabled type="datetime-local" class="start">
+</td>
+
+<td>
+<input disabled type="datetime-local" class="end">
+</td>
+
+<td>
+<input readonly class="hours">
+</td>
+
+<td>
+<input disabled type="file">
+</td>
+
+<td>
+<input disabled type="text">
+</td>
 `;
 
-sitesTable.appendChild(row);
+table.appendChild(row);
 
 });
 
-updateProgress();document.querySelectorAll("input[type='datetime-local']").forEach(function(input){
+updateProgress();
 
-input.addEventListener("change",function(){
+}
 
-const row=input.closest("tr");
+createTable();function enableRow(row){
 
-const start=row.cells[5].querySelector("input").value;
-const end=row.cells[6].querySelector("input").value;
+row.querySelector(".gps").innerHTML="✅ داخل النطاق";
 
-if(start!=="" && end!==""){
+row.querySelectorAll("select").forEach(function(item){
 
-const diff=(new Date(end)-new Date(start))/3600000;
+item.disabled=false;
 
-row.cells[7].querySelector("input").value=diff.toFixed(2);
+});
+
+row.querySelectorAll("input").forEach(function(item){
+
+if(item.type!=="file"&&item.className!=="hours"){
+
+item.disabled=false;
 
 }
 
 });
 
+}
+
+document.querySelectorAll("#sitesTable tr").forEach(function(row){
+
+row.cells[1].onclick=function(){
+
+enableRow(row);
+
+};
+
 });
 
-document.querySelectorAll("select").forEach(function(select){
+document.addEventListener("change",function(e){
 
-select.addEventListener("change",function(){
+if(e.target.classList.contains("status")){
 
-const row=this.closest("tr");
+const row=e.target.closest("tr");
 
 if(!row.dataset.done){
 
@@ -92,18 +137,68 @@ updateProgress();
 
 }
 
-});
+}
 
 });
 
-document.getElementById("finishBtn").onclick=function(){
+document.addEventListener("change",function(e){
 
-alert("تم إنهاء المهمة بنجاح");
+if(e.target.classList.contains("end")){
+
+const row=e.target.closest("tr");
+
+const start=row.querySelector(".start").value;
+
+const end=row.querySelector(".end").value;
+
+if(start!==""&&end!==""){
+
+const diff=(new Date(end)-new Date(start))/3600000;
+
+row.querySelector(".hours").value=diff.toFixed(2);
+
+}
+
+}
+
+});document.getElementById("saveBtn").onclick=function(){
+
+localStorage.setItem(
+
+"lastMission",
+
+JSON.stringify({
+
+plan:planNumber,
+
+date:new Date().toLocaleString(),
+
+completed:completed
+
+})
+
+);
+
+alert("تم حفظ المهمة");
 
 };
 
-document.getElementById("saveBtn").onclick=function(){
+document.getElementById("finishBtn").onclick=function(){
 
-alert("تم حفظ المهمة");
+alert("تم إنهاء المهمة");
+
+window.location.href="history.html";
+
+};
+
+document.getElementById("pdfBtn").onclick=function(){
+
+window.print();
+
+};
+
+document.getElementById("printBtn").onclick=function(){
+
+window.print();
 
 };
